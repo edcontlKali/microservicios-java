@@ -3,17 +3,33 @@ package com.example.demo.vo;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class ClienteRequest implements Serializable {
 	
 	private static final long serialVersionUID = -6903332260936970317L;
+	@NotNull
+	@NotBlank
 	private String nombreUno;
     private String nombredOS;
+    @NotNull
+	@NotBlank
     private String apellidoPaterno;
+    @NotNull
+	@NotBlank
     private String appelidoMaterno;
     private Date fechaNacimiento;
+    @NotNull
+	@NotBlank
 	private char sexo;
+    @NotNull
+	@NotBlank
 	private String curp;
+    @NotNull
+	@NotBlank
 	private String nacionalidad;
+    
 	public String getNombreUno() {
 		return nombreUno;
 	}
