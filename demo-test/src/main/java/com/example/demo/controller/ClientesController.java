@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,6 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.dao.entity.ClienteEntity;
+import com.example.demo.service.ClienteService;
 import com.example.demo.vo.WelcomeMessageVO;
 import com.google.gson.Gson;
 
@@ -14,7 +19,8 @@ import com.google.gson.Gson;
 //@RequestMapping ("/xolalpan/v1.0/mifarmacia/clientes")
 @RequestMapping (path="/xolalpan/v1.0/mifarmacia/clientes", produces = "application/json")
 public class ClientesController {
-
+	@Autowired
+	private ClienteService clienteService;
 	@Autowired
 	private Gson gson;
 	
@@ -28,6 +34,15 @@ public class ClientesController {
 		welcome.setPlaneta("Tierra");
 		welcome.setSerieFavorita("Dark");
 		
-	    return new ResponseEntity<String>(gson.toJson(welcome), null, HttpStatus.OK);
+	    return new ResponseEntity<String> (gson.toJson(welcome), null, HttpStatus.OK);
+	}
+	
+	@GetMapping
+	public ResponseEntity<?> getClientesList () {
+		Iterable<ClienteEntity> listClientes = clienteService.getClientesList();
+		if (listClientes.iterator().hasNext())
+			return new ResponseEntity<String> (gson.toJson(listClientes), HttpStatus.OK);
+		else 
+			return new ResponseEntity<String> (HttpStatus.NO_CONTENT);
 	}
 }

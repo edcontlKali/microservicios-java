@@ -22,9 +22,9 @@ public class ClienteEntity {
     private String nombreUno;
 	@Column (name = "NOMBRE_DOS")
     private String nombredOS;
-	@Column (name = "APLLIDO_PATERNO")
+	@Column (name = "APELLIDO_PATERNO")
     private String apellidoPaterno;
-	@Column (name = "APLLIDO_MATERNO")
+	@Column (name = "APELLIDO_MATERNO")
     private String appelidoMaterno;
 	@Column (name = "FECHA_NACIMIENTO")
     private Date fechaNacimiento;
