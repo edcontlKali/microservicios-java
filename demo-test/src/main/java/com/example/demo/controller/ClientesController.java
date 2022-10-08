@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,7 +56,7 @@ public class ClientesController {
 	
 	// registro de cliente
 	@PostMapping ("/registros")
-	public ResponseEntity<?> registrarCliente (@Validated @RequestBody ClienteRequestVO request ) {
+	public ResponseEntity<?> registrarCliente (@Valid @RequestBody ClienteRequestVO request ) {
 		String mensaje = clienteService.registarCliente(request);
 		
 		//Map<String, String> map = new HashMap<String, String>();
