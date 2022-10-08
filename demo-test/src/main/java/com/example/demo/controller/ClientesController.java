@@ -52,7 +52,7 @@ public class ClientesController {
 			return new ResponseEntity<String> (HttpStatus.NO_CONTENT);
 	}
 	
-	// regitro de cliente
+	// registro de cliente
 	@PostMapping ("/registros")
 	public ResponseEntity<?> registrarCliente (@Validated @RequestBody ClienteRequestVO request ) {
 		String mensaje = clienteService.registarCliente(request);
