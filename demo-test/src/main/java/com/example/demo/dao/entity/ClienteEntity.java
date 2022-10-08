@@ -27,7 +27,7 @@ public class ClienteEntity {
 	@Column (name = "APELLIDO_MATERNO")
     private String appelidoMaterno;
 	@Column (name = "FECHA_NACIMIENTO")
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
 	@Column (name = "SEXO")
 	private char sexo;
 	@Column (name = "CURP")
@@ -64,10 +64,10 @@ public class ClienteEntity {
 	public void setAppelidoMaterno(String appelidoMaterno) {
 		this.appelidoMaterno = appelidoMaterno;
 	}
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	public char getSexo() {
