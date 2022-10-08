@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class ClienteEntity {
 	
 	@Id
-	//@Column (name = "ID_CLIENTE")
+	@Column (name = "ID_CLIENTE")
     //@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long idCliente;

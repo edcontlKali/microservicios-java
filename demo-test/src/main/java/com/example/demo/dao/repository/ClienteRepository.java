@@ -11,7 +11,7 @@ import com.example.demo.dao.entity.ClienteEntity;
 @Repository
 public interface ClienteRepository extends JpaRepository<ClienteEntity, Long> {
 	
-	@Query (value="SELECT FROM ClienteEntity A WHERE A.idCliente = :id ")
-	public List<ClienteEntity> getClientesxId (Long id);
+	//@Query (value="SELECT FROM ClienteEntity A WHERE A.idCliente = :id ")
+	//public List<ClienteEntity> getClientesxId (Long id);
   
 }

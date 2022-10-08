@@ -1,25 +1,23 @@
 package com.example.demo.vo;
 
 import java.io.Serializable;
-import java.util.Date;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public class ClienteRequest implements Serializable {
+public class ClienteRequestVO implements Serializable {
 	
 	private static final long serialVersionUID = -6903332260936970317L;
 	@NotNull
 	@NotBlank
 	private String nombreUno;
-    private String nombredOS;
+    private String nombreDos;
     @NotNull
 	@NotBlank
     private String apellidoPaterno;
     @NotNull
 	@NotBlank
-    private String appelidoMaterno;
-    private Date fechaNacimiento;
+    private String apellidoMaterno;
+    private String fechaNacimiento;
     @NotNull
 	@NotBlank
 	private char sexo;
@@ -36,11 +34,11 @@ public class ClienteRequest implements Serializable {
 	public void setNombreUno(String nombreUno) {
 		this.nombreUno = nombreUno;
 	}
-	public String getNombredOS() {
-		return nombredOS;
+	public String getNombreDos() {
+		return nombreDos;
 	}
-	public void setNombredOS(String nombredOS) {
-		this.nombredOS = nombredOS;
+	public void setNombreDos(String nombreDos) {
+		this.nombreDos = nombreDos;
 	}
 	public String getApellidoPaterno() {
 		return apellidoPaterno;
@@ -48,16 +46,16 @@ public class ClienteRequest implements Serializable {
 	public void setApellidoPaterno(String apellidoPaterno) {
 		this.apellidoPaterno = apellidoPaterno;
 	}
-	public String getAppelidoMaterno() {
-		return appelidoMaterno;
+	public String getApellidoMaterno() {
+		return apellidoMaterno;
 	}
-	public void setAppelidoMaterno(String appelidoMaterno) {
-		this.appelidoMaterno = appelidoMaterno;
+	public void setApellidoMaterno(String apellidoMaterno) {
+		this.apellidoMaterno = apellidoMaterno;
 	}
-	public Date getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	public char getSexo() {
