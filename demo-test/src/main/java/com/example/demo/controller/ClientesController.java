@@ -11,12 +11,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.dao.entity.ClienteEntity;
 import com.example.demo.service.ClienteService;
-import com.example.demo.vo.ClienteRequestVO;
+import com.example.demo.vo.ClienteInsertRequestVO;
+import com.example.demo.vo.ClienteUpdateRequestVO;
 import com.example.demo.vo.WelcomeMessageVO;
 import com.google.gson.Gson;
 
@@ -56,8 +58,18 @@ public class ClientesController {
 	
 	// registro de cliente
 	@PostMapping ("/registros")
-	public ResponseEntity<?> registrarCliente (@Valid @RequestBody ClienteRequestVO request ) {
+	public ResponseEntity<?> registrarCliente (@Valid @RequestBody ClienteInsertRequestVO request ) {
 		String mensaje = clienteService.registarCliente(request);
+		
+		//Map<String, String> map = new HashMap<String, String>();
+
+		return new ResponseEntity<String> (gson.toJson(mensaje), HttpStatus.OK);
+	}
+	
+	// Actualizar datos del cliente
+	@PutMapping
+	public ResponseEntity<?> actualizarDatosCliente (@Valid @RequestBody ClienteUpdateRequestVO request ) {
+		String mensaje = clienteService.atualizarCliente(request);
 		
 		//Map<String, String> map = new HashMap<String, String>();
 		

@@ -3,36 +3,29 @@ package com.example.demo.vo;
 import java.io.Serializable;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.Length;
 import org.springframework.validation.annotation.Validated;
 
 @Validated
-public class ClienteRequestVO implements Serializable {
+public class ClienteUpdateRequestVO implements Serializable {
 	
-	private static final long serialVersionUID = -6903332260936970317L;
-	@NotNull (message = "El parametro nombreUno es requerido")
-	@NotBlank (message = "El parametro nombreUno es requerido")
+	private static final long serialVersionUID = -2941409851496823092L;
+	@NotNull (message = "El parametro idCliente es requerido")
+	//@NotBlank (message = "El parametro idCliente es requerido")
+	private Long idCliente;
 	private String nombreUno;
     private String nombreDos;
-    @NotNull
-	@NotBlank
     private String apellidoPaterno;
-    @NotNull
-	@NotBlank
     private String apellidoMaterno;
     private String fechaNacimiento;
-    //@NotNull
-	//@NotBlank
-    //@Length(min=1)
-	private char sexo;
-    @NotNull
-	@NotBlank
-	private String curp;
-    @NotNull
-	@NotBlank
-	private String nacionalidad;
-    
+    private char sexo;
+    private String curp;
+    private String nacionalidad;
+	public Long getIdCliente() {
+		return idCliente;
+	}
+	public void setIdCliente(Long idCliente) {
+		this.idCliente = idCliente;
+	}
 	public String getNombreUno() {
 		return nombreUno;
 	}
